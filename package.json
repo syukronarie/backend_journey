@@ -4,7 +4,7 @@
 	"main": "index.js",
 	"license": "MIT",
 	"scripts": {
-		"dev": "nodemon ./src/index.ts --exec babel-node --presets babel-preset-env",
+		"dev": "nodemon ./src/index.js --exec babel-node --presets babel-preset-env",
 		"build": "tsc --project ./"
 	},
 	"dependencies": {

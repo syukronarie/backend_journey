@@ -1,9 +1,16 @@
 import express from "express";
 import config from "./config/config";
-const start = async () => {
+import Routes from "./routers/router";
+
+const start = () => {
 	const app = express();
-	app.get("/", (_req, res) => {
-		res.json({ hello: "world" });
+
+	app.use(Routes);
+
+	app.use((req, res) => {
+		res.status(404).send({
+			error: `route ${req.path} not found`,
+		});
 	});
 
 	app.listen(config.PORT, () => {
